@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="tertiary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Pedidos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container mt20">
+
+    <div class="my-list" *ngFor="let item of payments" (click)="goView(item)">
+
+      <div>
+        <span>Total Fatura</span>
+        <span>{{item.payment_total_value | currency: 'BRL'}}</span>
+      </div>
+
+      <div>
+        <span>Valor Parcela</span>
+        <span>{{item.payment_installment_value | currency: 'BRL'}}</span>
+      </div>
+
+      <div>
+        <span>
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#65B9D6" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+          </svg>
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

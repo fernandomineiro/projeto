@@ -1,0 +1,51 @@
+<ion-content>
+
+  <form [formGroup]="loginForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div class="box-login">
+            <span><img src="assets/img/logotipo.png"></span>
+            <span class="theme-font central-h light-blue">Facilitando seu negócio</span>
+          </div>
+        </ion-col>
+        <ion-col size="12">
+          <h1 class="ion-text-center theme-font">Login</h1>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="tertiary">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="tertiary">Senha</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="12" padding class="ion-text-end">
+          <ion-text color="secondary" (click)="forgotPass()">esqueci a senha</ion-text>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center">
+          <ion-button color="tertiary" [expand]="loadBtn" size="large" shape="round" fill="outline"
+            [disabled]="loginForm.invalid || load" (click)="logar()">
+            <ion-icon *ngIf="!load" slot="start" name="log-in"></ion-icon>
+            <ion-label *ngIf="!load">ENTRAR</ion-label>
+            <ion-label *ngIf="load"><i class="fas fa-spinner fa-spin"></i></ion-label>
+          </ion-button>
+        </ion-col>
+        <ion-col size="12" padding class="ion-text-end">
+          <ion-text color="secondary" (click)="goRegister()">cadastre-se</ion-text>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+
+</ion-content>

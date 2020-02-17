@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon size="large" name="arrow-round-back" (click)="goBack()"></ion-icon>
+    </ion-buttons>
+    <ion-title>Produtos {{brandName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="animated slideInUp faster">
+
+  <ion-fab class="animated bounceInRight" vertical="start" horizontal="end" slot="fixed" (click)="goCheckOut()">
+    <ion-fab-button>
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+  <ion-card *ngFor="let item of products?.rows">
+    <img src="{{service.URL_IMG.products}}{{item.product_path_img}}" />
+    <ion-card-header>
+      <ion-card-subtitle class="ion-text-center">{{item.product_name}}</ion-card-subtitle>
+      <ion-card-title class="ion-text-center">{{item.product_description}}</ion-card-title>
+      <div class="text-center blue">Valor normal: {{item.price * item.product_qtd| currency : 'BRL'}}</div>
+      <div class="text-center blue">Valor Associado: {{item.associate_price * item.product_qtd| currency : 'BRL'}}</div>
+    </ion-card-header>
+    <ion-card-content>
+
+      <div class="wrap-buttons">
+        <ion-fab-button color="danger" (click)="lessToCart(item)">
+          <ion-icon color="light" name="remove"></ion-icon>
+        </ion-fab-button>
+        <span>{{item.product_qtd}}</span>
+        <ion-fab-button color="primary" (click)="addToCart(item)">
+          <ion-icon color="light" name="add"></ion-icon>
+        </ion-fab-button>
+      </div>
+
+      <ion-row>
+
+        <ion-col *ngIf="associate == 0">
+          <ion-button expand="block" color="success" class="ion-margin"
+            (click)="orderToCart(item, item.product_qtd * item.price,item.product_qtd * item.sales_price)">
+            <span *ngIf="!load">ADICIONAR AO CARRINHO
+              {{item.product_qtd * item.price | currency: 'BRL'}}
+               </span>
+            <span *ngIf="load">registrando ...<i class="fas fa-spinner fa-spin"></i></span>
+          </ion-button>
+        </ion-col>
+
+        <ion-col *ngIf="associate == 1">
+          <ion-button expand="block" color="success" class="ion-margin"
+            (click)="orderToCart(item, item.product_qtd * item.associate_price,item.product_qtd * item.sales_price)">
+            <span *ngIf="!load">ADICIONAR AO CARRINHO
+              {{item.product_qtd * item.associate_price | currency: 'BRL'}}
+               </span>
+            <span *ngIf="load">registrando ...<i class="fas fa-spinner fa-spin"></i></span>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

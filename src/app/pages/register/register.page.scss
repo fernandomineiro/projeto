@@ -1,0 +1,60 @@
+
+.card.hovercard .cardheader {
+    background: url("../../../assets/img/bg-profile.jpg");
+    background-size: cover;
+    height: 135px;
+}
+
+.card.hovercard .avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+    label{        
+        i{
+            color:#cdcdcd;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.card.hovercard .avatar img {
+    width: 128px;
+    height: 128px;
+    max-width: 128px;
+    max-height: 128px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid #cdcdcd;
+    background: #fff;
+}
+
+.card.hovercard .info {
+    padding: 4px 8px 10px;
+}
+
+.card.hovercard .info .title {
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 1;
+    color: #262626;
+    vertical-align: middle;
+}
+
+.card.hovercard .info .desc {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    text-overflow: ellipsis;
+}
+
+.card.hovercard .bottom {
+    padding: 0 20px;
+    margin-bottom: 17px;
+}
+
+.btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }

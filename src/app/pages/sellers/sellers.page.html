@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="tertiary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>SUA REGIÃO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="animated slideInUp faster">
+
+  <ion-list *ngIf="states">
+
+
+    <ion-item>
+      <ion-label>Selecione um estado</ion-label>
+      <ion-select placeholder="Selecionar" [(ngModel)]="idState" (ionChange)="selectStateToSetCity()">
+        <ion-select-option *ngFor="let item of states" [value]="item.region_state_id">{{item?.estado?.nome}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="animated slideInUp faster" *ngIf="idState !== null">
+      <ion-label>Selecione um cidade</ion-label>
+      <ion-select placeholder="Selecionar" [(ngModel)]="idCity" (ionChange)="selectCityToUser()">
+        <ion-select-option *ngFor="let item of cities" [value]="item.region_city_id">{{item?.cidade?.nome}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <div class="animated faster slideInUp" *ngIf="idCity !== null">
+    <div>
+      <h1 class="text-info text-center">Vendedores</h1>
+      <div class="pannel-scroll-h">
+
+        <div *ngFor="let item of sellers">
+
+          <div class="wrap-profile">
+
+            <span class="profile" (click)="selectSeller(item)">
+              <img class="profile-img" [ngClass]="{'profile-img-selected' : item.selector === true}"
+                src="{{service.URL_IMG.sellers}}{{item.seller.seller_img}}">
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <ion-grid class="animated faster slideInUp" *ngIf="showBtnSave">
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <ion-button color="tertiary" expand="block" size="large" shape="round" fill="outline" (click)="saveSeller()">
+            <ion-icon *ngIf="!load" slot="start" name="log-in"></ion-icon>
+            <ion-label *ngIf="!load">SALVAR</ion-label>
+            <ion-label *ngIf="load"><i class="fas fa-spinner fa-spin"></i></ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </div>
+
+</ion-content>

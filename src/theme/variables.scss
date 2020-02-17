@@ -1,0 +1,224 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --ion-color-primary: #3880ff;
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #3171e0;
+  --ion-color-primary-tint: #4c8dff;
+
+  /** secondary **/
+  --ion-color-secondary: #0cd1e8;
+  --ion-color-secondary-rgb: 12, 209, 232;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #0bb8cc;
+  --ion-color-secondary-tint: #24d6ea;
+
+  /** tertiary **/
+  --ion-color-tertiary: #7044ff;
+  --ion-color-tertiary-rgb: 112, 68, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #633ce0;
+  --ion-color-tertiary-tint: #7e57ff;
+
+  /** success **/
+  --ion-color-success: #10dc60;
+  --ion-color-success-rgb: 16, 220, 96;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #0ec254;
+  --ion-color-success-tint: #28e070;
+
+  /** warning **/
+  --ion-color-warning: #ffce00;
+  --ion-color-warning-rgb: 255, 206, 0;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-contrast-rgb: 255, 255, 255;
+  --ion-color-warning-shade: #e0b500;
+  --ion-color-warning-tint: #ffd31a;
+
+  /** danger **/
+  --ion-color-danger: #f04141;
+  --ion-color-danger-rgb: 245, 61, 61;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d33939;
+  --ion-color-danger-tint: #f25454;
+
+  /** dark **/
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 34, 34;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+
+  /** medium **/
+  --ion-color-medium: #989aa2;
+  --ion-color-medium-rgb: 152, 154, 162;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #86888f;
+  --ion-color-medium-tint: #a2a4ab;
+
+  /** light **/
+  --ion-color-light: #f4f5f8;
+  --ion-color-light-rgb: 244, 244, 244;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d7d8da;
+  --ion-color-light-tint: #f5f6f9;
+  /**my colors**/
+  --light-blue:#00CEFF;
+  --pink: #F866AE;
+  --pirple:#AA90FF;
+  --light-grey: #d9dada;
+  --dark-teal:#1996C2;
+  --light-teal:#65B9D6;
+}
+.upper{
+  text-transform: uppercase;
+}
+.title-toast-danger{
+  color: #7E1824;
+}
+.title-toast-success{
+  color:#00582D;
+}
+.title-toast-white{
+  color:#fff;
+}
+.title-toast-warning{
+  color:#FFC61F;
+}
+.title-toast-primary{
+  color:#0023A0;
+}
+.light-blue{
+  color:#00CEFF!important;
+}
+.blue{
+  color: var(--ion-color-primary);
+}
+.red{
+  color:#F04141;
+}
+.green{
+  color:#41F041;
+}
+.light-teal{
+  color:#65B9D6;
+}
+.bg-light-blue{
+  background: #00CEFF;
+}
+.central-h{
+  display: flex;
+  justify-content: center;
+  width:100%;
+  text-align:center;
+}
+.bold{
+  font-weight: bold;
+}
+.m5{
+  margin: 5px;
+}
+.m10{
+  margin: 10px;
+}
+.mb10{
+  margin-bottom: 10px;
+}
+.mt10{
+  margin-top: 10px;
+}
+.mt20{
+  margin-top: 20px;
+}
+.mt30{
+  margin-top: 30px;
+}
+.mt40{
+  margin-top: 40px;
+}
+.mt50{
+  margin-top: 50px;
+}
+.mt100{
+  margin-top: 100px;
+}
+*{
+  font-family: monospace;
+}
+.fs-small{
+  font-size: .81rem!important;
+}
+.fs1{
+  font-size: 1rem!important;
+}
+.fs1-3{
+  font-size: 1.3rem!important;
+}
+.fs1-5{
+  font-size: 1.5rem!important;
+}
+.fs1-7{
+  font-size: 1.7rem!important;
+}
+.fs2{
+  font-size: 2rem!important;
+}
+.text-wrap{
+  white-space: nowrap;
+}
+.line{
+  width:100%;
+border-bottom: 1px solid #d9dada;
+margin-bottom: 5px;
+}
+ion-text{
+  font-size: 1.2rem!important;
+}
+ion-title{
+  text-transform: uppercase;
+  color: #633ce0;
+}
+.box-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:20px;
+  margin-top: 40px;
+  span:nth-child(1){
+    width:80%;
+  }
+  span:nth-child(2){
+    font-size: 1.52rem;
+    color:#d9dada;
+    margin-top: 20px;
+    
+  }
+}
+.wrap-buttons{
+  display: flex;
+  justify-content: center;
+  width:100%;
+  span{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: var(--light-blue);
+  font-size: 1.5rem;
+  }
+}
+.hide-input-file {
+  visibility: hidden;
+}

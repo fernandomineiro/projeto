@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <span (click)="goBack()">
+        <svg style="width:32px;height:32px" viewBox="0 0 24 24">
+          <path fill="#888" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+        </svg>
+      </span>
+
+    </ion-buttons>
+    <ion-title>Compra Realizada</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container d-flex flex-column align-items-center mt10">
+    <span>Valor total da compra</span>
+    <span> {{total | currency: 'BRL'}}</span>
+    <span>Forma de pagamento</span>
+    <span *ngIf="type == 1">à vista - boleto</span>
+    <span *ngIf="type == 2">15/30/45 dias - boletos</span>
+    <span *ngIf="type == 3">20/40/60 dias - boletos</span>
+    <span *ngIf="type == 4">30/60/90 dias - boletos</span>
+    <span *ngIf="type == 5">cartão de débito à vista</span>
+    <span *ngIf="type == 6">cartão de crédito</span>
+  </div>
+  <div class="container mt10">
+
+    <accordion [isAnimated]="true" *ngFor="let item of payments">
+      <accordion-group>
+        <button class="btn btn-link btn-block clearfix" accordion-heading type="button">
+          <div class="pull-left float-left">Vencimento em {{item.date_payment | date : 'dd/MM/yyyy'}}</div>
+        </button>
+        <p>Valor da parcela: {{item.payment_installment_value | currency: 'BRL'}}</p>
+        <p>parcela {{item.installment_nth}} de {{item.installment_qtd}}</p>
+        <p>situação:
+          <span class="text-danger" *ngIf="item.status_payment === 1">
+            aguardando pagamento
+          </span>
+          <span class="text-primary" *ngIf="item.status_payment === 2">
+            pagamento efetuado
+          </span>
+          <span class="text-danger" *ngIf="item.status_payment === 3">
+            aguardando rejeitado
+          </span>
+          <span class="text-danger" *ngIf="item.status_payment === 4">
+            aguardando cancelado
+          </span>
+
+        </p>
+      </accordion-group>
+    </accordion>
+
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let item of order?.rows">
+      <ion-avatar slot="start">
+        <img src="{{service.URL_IMG.products}}{{item.product.product_path_img}}">
+      </ion-avatar>
+      <ion-label>
+        <h2 class="light-blue">{{item.product.product_name}}</h2>
+        <h3>quantidade: {{item.qtd}}</h3>
+        <span class="blue">{{item.total_price | currency : 'BRL'}}</span>
+      </ion-label>
+      <ion-icon class="light-teal" name="eye" (click)="goPrductSilgle(item.product_id)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

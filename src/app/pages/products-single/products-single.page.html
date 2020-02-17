@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-end">
+  <span class="m10" (click)="goBack()">
+    <svg style="width:32px;height:32px" viewBox="0 0 24 24">
+      <path fill="#f25454"
+        d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+    </svg>
+  </span>
+
+</div>
+
+<ion-content>
+  <h2 class="lead central-h light-blue upper">{{singleProduct?.product_name}}</h2>
+  <div class="central-h" *ngIf="load">
+    <p>carregando...</p>
+  </div>
+  <div class="wrap-img" class="ion-text-center mt10" *ngIf="singleProduct">
+    <img src="{{service.URL_IMG.products}}{{singleProduct?.product_path_img}}">
+  </div>
+  <div class="container description mt10 mb10">
+    <span>Descrição</span>
+    <span>{{singleProduct?.product_description}}</span>
+  </div>
+  <div class="container description mt10 mb10">
+    <span>Ficha Técnica</span>
+    <div [innerHTML]="singleProduct?.description"></div>
+  </div>
+
+
+
+</ion-content>

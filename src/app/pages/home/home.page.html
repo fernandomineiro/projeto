@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="tertiary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let item of banners">
+      <img src="{{service.URL_IMG.banners}}{{item.banner_path_img}}">
+    </ion-slide>
+  </ion-slides>
+
+  <h3 class="ion-text-center light-blue mt30">Lista de Produtos</h3>
+  <div class="brands-products" *ngFor="let item of brands">
+    <div (click)="goBrand(item.brand_id,item.brand_name)">
+      <span><img src="{{service.URL_IMG.brands}}{{item.brand_path_image}}"></span>
+      <span>></span>
+    </div>
+  </div>
+
+
+</ion-content>
